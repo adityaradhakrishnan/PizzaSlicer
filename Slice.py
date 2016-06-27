@@ -14,14 +14,14 @@ def Intersect(linA, linB):
 	yVal = linA[0]*xVal + linA[1]
 	return 1 if math.sqrt(xVal**2 + yVal**2) < 1 else 0
 
-Cuts      = 3
+Cuts      = 5                                               # Number of cuts to the pizza
 Dict      = {}
-MaxSlices = (Cuts**2 + Cuts + 2)/2
-
+MaxSlices = (Cuts**2 + Cuts + 2)/2                          # Maximum number of pieces for n slices
+                                                            # http://mathworld.wolfram.com/CircleDivisionbyLines.html
 for iC in range(Cuts + 1, MaxSlices + 1):
 	Dict[iC] = 0.0
 
-for iX in xrange(1000000):
+for iX in xrange(10000):
 	Lines = []
 	Sum = 0
 
